@@ -1,8 +1,14 @@
 namespace myapp;
 
-entity Books {
+entity Authors {
     key ID     : Integer;
-        title  : String;
-        author : String;
-        price  : Decimal;
+        name   : String;
+        country: String;
+}
+
+entity Books {
+    key ID      : Integer;
+        title   : String;
+        price   : Decimal;
+        author  : Association to Authors;
 }

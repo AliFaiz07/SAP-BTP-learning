@@ -1,4 +1,4 @@
-ID,title,author,price
-1,The Alchemist,Paulo Coelho,299
-2,Atomic Habits,James Clear,499
-3,Deep Work,Cal Newport,399
+ID,title,price,author_ID
+1,The Alchemist,299,1
+2,Atomic Habits,499,2
+3,Deep Work,399,3
