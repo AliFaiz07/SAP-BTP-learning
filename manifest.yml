@@ -1,0 +1,7 @@
+---
+applications:
+- name: myapp-srv
+  random-route: true
+  path: gen/srv
+  memory: 256M
+  buildpack: nodejs_buildpack
