@@ -9,11 +9,17 @@
   "devDependencies": {
     "@cap-js/sqlite": "^2.4.0",
     "@sap/cds-dk": "^9.9.2",
-    "cds-plugin-ui5": "^0.17.0"
+    "cds-plugin-ui5": "^0.17.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.49"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-books": "cds watch --open bo.books/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-books": "cds watch --open bo.books/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-authors": "cds watch --open authorsview.authors/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy myapp --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "private": true,
   "cds": {
@@ -27,6 +33,7 @@
     "app/*"
   ],
   "sapux": [
-    "app/books"
+    "app/books",
+    "app/authors"
   ]
 }
